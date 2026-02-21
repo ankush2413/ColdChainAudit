@@ -39,7 +39,8 @@
 
 ## 📍 API Endpoints
 
-Method,Endpoint,Description
-POST,/api/v1/telemetry/ingest,Ingest sensor data into RDS
-GET,/api/v1/audit/logs/{date},Generate S3 Pre-signed URL for a specific date
-GET,/api/v1/telemetry/latest,Fetch most recent data for dashboard
+**Method,Endpoint,Description**
+
+- POST,/api/v1/telemetry/ingest,Ingest sensor data into RDS
+- GET,/api/v1/audit/logs/{date},Generate S3 Pre-signed URL for a specific date
+- GET,/api/v1/telemetry/latest,Fetch most recent data for dashboard
