@@ -9,11 +9,13 @@ import org.springframework.stereotype.Service;
 import com.supplychain.ColdChainAudit_API.models.TemperatureTelemetry;
 import com.supplychain.ColdChainAudit_API.repository.TelemetryRepository;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
+@Transactional // // Ensures either BOTH S3 and DB update happen, or NEITHER happens
 @Slf4j
 public class ArchiveScheduler {
     
