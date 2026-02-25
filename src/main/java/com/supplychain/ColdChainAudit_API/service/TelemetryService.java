@@ -1,6 +1,7 @@
 package com.supplychain.ColdChainAudit_API.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,10 @@ public class TelemetryService {
                 .build();
         
         repository.save(telemetry);
+    }
+
+    public List<TemperatureTelemetry> getAllTelemetry() {
+        return repository.findAll();
     }
     
 }

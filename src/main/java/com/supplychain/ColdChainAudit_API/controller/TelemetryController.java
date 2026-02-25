@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.supplychain.ColdChainAudit_API.dto.TelemetryRequest;
+import com.supplychain.ColdChainAudit_API.models.TemperatureTelemetry;
 import com.supplychain.ColdChainAudit_API.service.TelemetryService;
-
+import java.util.*;
 import lombok.RequiredArgsConstructor;
 
 
@@ -31,6 +32,12 @@ public class TelemetryController {
         telemetryService.saveTelemetry(request);
         
         return ResponseEntity.ok("Data Ingested Successfully");
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<TemperatureTelemetry>> getAllData() {
+        List<TemperatureTelemetry> data = telemetryService.getAllTelemetry();
+        return ResponseEntity.ok(data);
     }
     
 }

@@ -12,6 +12,9 @@ import com.supplychain.ColdChainAudit_API.models.TemperatureTelemetry;
 public interface TelemetryRepository extends JpaRepository<TemperatureTelemetry, Long> {
 
     List<TemperatureTelemetry> findByRecordedAtBeforeAndIsArchivedFalse(LocalDateTime threshold);
+
+    // Useful for testing (archive everything that hasn't been moved yet)
+    List<TemperatureTelemetry> findByIsArchivedFalse();
 }
 
 /*
